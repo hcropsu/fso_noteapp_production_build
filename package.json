@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf dist && cd ../fullstackopen_materiaaliharkat/osa2/noteapp_frontend && npm run build && cp -r dist ~/fso_noteapp_production_build",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push -u origin main"
   },
   "author": "Roope Salminen",
   "license": "MIT",
