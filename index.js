@@ -2,7 +2,6 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const mongoose = require('mongoose')
 const Note = require('./models/note')
 
 const requestLogger = (request, response, next) => {
@@ -78,13 +77,8 @@ app.post('/api/notes', (request, response, next) => {
     .catch(error => next(error))
 })
 
-app.put('/api/notes:id', (request, response, next) => {
+app.put('/api/notes/:id', (request, response, next) => {
   const { content, important } = request.body
-
-  const note = {
-    content: body.content,
-    important: body.important,
-  }
 
   Note.findByIdAndUpdate(request.params.id, { content, important }, { new: true, runValidators: true, context: 'query' })
     .then(updatedNote => {
