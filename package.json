@@ -8,7 +8,8 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:ui": "rm -rf dist && cd ../fullstackopen_materiaaliharkat/osa2/noteapp_frontend && npm run build && cp -r dist ~/fso_noteapp_production_build",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push -u origin main"
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push -u origin main",
+    "lint": "eslint ."
   },
   "author": "Roope Salminen",
   "license": "MIT",
@@ -20,7 +21,9 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
+    "@stylistic/eslint-plugin-js": "^2.8.0",
     "eslint": "^9.10.0",
+    "globals": "^15.9.0",
     "nodemon": "^3.1.4"
   }
 }
