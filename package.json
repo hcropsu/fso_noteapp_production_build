@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
-    "dev": "cross-env NODE_ENV=development index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
     "test": "cross-env NODE_ENV=test node --test",
     "build:ui": "rm -rf dist && cd ../fullstackopen_materiaaliharkat/osa2/noteapp_frontend && npm run build && cp -r dist ~/fso_noteapp_production_build",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push -u origin main",
@@ -14,6 +14,7 @@
   "author": "Roope Salminen",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
