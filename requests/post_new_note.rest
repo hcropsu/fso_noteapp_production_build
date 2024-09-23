@@ -1,0 +1,8 @@
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtha2UiLCJpZCI6IjY2ZWQ0YTExMmRhN2E3ODk0ZGViYmViZCIsImlhdCI6MTcyNzA2NzM1M30.cgC5FdSAZBSHFrVl64YEBgnmkMSLn-qDshKm9fHV6hc
+
+{
+  "content": "User id should be extractable frm a valid token",
+  "important": true
+}
